@@ -28,10 +28,13 @@ export default class ProjectItem
     e.dataTransfer!.effectAllowed = "move";
   }
 
-  dragEndHandler(_: DragEvent): void {}
+  dragEndHandler(_e: DragEvent): void {
+    console.log("dragend");
+  }
 
   configure() {
     this.element.addEventListener("dragstart", this.dragStartHandler);
+    this.element.addEventListener("dragend", this.dragEndHandler);
   }
 
   renderContent() {

@@ -37,6 +37,7 @@ export default class ProjectList
     listEl.classList.remove("droppable");
   }
 
+  @Autobind
   dropHandler(e: DragEvent): void {
     const projectId = e.dataTransfer!.getData("text/plain");
     projectState.moveProject(
